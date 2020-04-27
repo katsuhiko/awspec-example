@@ -21,6 +21,14 @@ docker run --rm -it -v "$(pwd):/home/app" -w /home/app awspec rake spec
 ```
 
 
+## 補足）awspec の初期化
+
+
+```
+docker run --rm -it -v "$(pwd):/home/app" -w /home/app awspec awspec init
+```
+
+
 ## 補足）AWSリソースからテストを作成する
 
 ```
