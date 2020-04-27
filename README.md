@@ -21,6 +21,13 @@ docker run --rm -it -v "$(pwd):/home/app" -w /home/app awspec rake spec
 ```
 
 
+## 補足）Gemfile.lock を作る
+
+```
+docker run --rm -it -v "$(pwd):/home/app" -w /home/app ruby:2.7 bundle install
+```
+
+
 ## 補足）awspec の初期化
 
 
