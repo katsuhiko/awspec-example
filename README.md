@@ -17,14 +17,14 @@ docker build -t awspec .
 テストを実行する。
 
 ```
-docker run --rm -it -v "$(pwd):/home/app" -w /home/app awspec rake spec
+docker run --rm -it -v "$(pwd)":/home/app -w /home/app awspec rake spec
 ```
 
 
 ## 補足）Gemfile.lock を作る
 
 ```
-docker run --rm -it -v "$(pwd):/home/app" -w /home/app ruby:2.7 bundle install
+docker run --rm -it -v "$(pwd)":/home/app -w /home/app ruby:2.7 bundle install
 ```
 
 
@@ -32,19 +32,17 @@ docker run --rm -it -v "$(pwd):/home/app" -w /home/app ruby:2.7 bundle install
 
 
 ```
-docker run --rm -it -v "$(pwd):/home/app" -w /home/app awspec awspec init
+docker run --rm -it -v "$(pwd)":/home/app -w /home/app awspec awspec init
 ```
 
 
 ## 補足）AWSリソースからテストを作成する
 
 ```
-docker run --rm -it -v "$(pwd):/home/app" -w /home/app awspec awspec generate cloudwatch_event --secrets_path ./spec/secrets.yml 
+docker run --rm -it -v "$(pwd)":/home/app -w /home/app awspec awspec generate cloudwatch_event --secrets_path ./spec/secrets.yml 
 ```
 
 
 ## 補足）参考サイト
 
 - https://github.com/k1LoW/awspec
-
-
